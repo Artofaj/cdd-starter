@@ -46,11 +46,11 @@ export function createOurTheme() {
             },
         },
         typography: (palette) => ({
+            fontFamily: ['Silka', 'sans-serif'].join(','),
             allVariants: {
                 //color: palette.text.primary,
                 fontWeight: 500,
                 lineHeight: 1.25,
-                fontFamily: ['Silka', 'sans-serif'].join(','),
             },
         }),
     });
