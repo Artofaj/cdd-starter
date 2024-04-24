@@ -19,10 +19,10 @@ const Header = ({ title }: HeaderProps) => {
     const isDesktop = useMediaQuery(theme.breakpoints.up('sm'));
 
     if (isDesktop) {
-        return <DesktopHeader pages={PAGES} />;
+        return <DesktopHeader title={title} pages={PAGES} />;
     }
 
-    return <MobileHeader pages={PAGES} />;
+    return <MobileHeader title={title} pages={PAGES} />;
 };
 
 export default Header;
