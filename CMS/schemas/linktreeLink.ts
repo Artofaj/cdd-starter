@@ -1,7 +1,7 @@
 export default {
-    name: 'links',
-    title: 'Linktree',
-    type: 'document',
+    name: 'linktreeLink',
+    title: 'Links',
+    type: 'object',
 
     fields: [
         {
@@ -19,6 +19,10 @@ export default {
             title: 'Feature',
             type: 'boolean',
             defaultValue: false,
-        }
+        },
     ]
+    ,
+    initialValue: {
+        isFeatured: false,
+    }
 }
