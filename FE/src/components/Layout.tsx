@@ -1,18 +1,21 @@
 import * as React from 'react';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { createOurTheme } from '../assets/themes/theme';
-import '../assets/themes/fonts.css';
 import Header from './Header';
+import '../assets/themes/fonts.css';
 
-const Layout = ({ children }) => {
+interface LayoutProps {
+    children: React.ReactNode;
+    omitHeader?: boolean;
+}
+
+const Layout = ({ children, omitHeader }: LayoutProps) => {
     return (
         <ThemeProvider theme={createOurTheme()}>
             <CssBaseline />
-            <Header title="CDD Starter" />
-            <div>
-                <main>{children}</main>
-                <footer></footer>
-            </div>
+
+            {!omitHeader && <Header title="cdd-starter" />}
+            <main>{children}</main>
         </ThemeProvider>
     );
 };
