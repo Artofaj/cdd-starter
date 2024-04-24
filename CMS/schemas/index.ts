@@ -1,1 +1,3 @@
-export const schemaTypes = []
+import links from "./links";
+
+export const schemaTypes = [links]
