@@ -1,7 +1,8 @@
 import { MenuItem, styled } from '@mui/material';
 import React from 'react';
+import { Link as a } from 'gatsby';
 
-const Link = styled('a')(({ theme }) => ({
+const Link = styled(a)(({ theme }) => ({
     color: 'inherit',
     textDecoration: 'none',
     fontSize: theme.typography.caption.fontSize,
@@ -31,7 +32,9 @@ const HeaderEntry = ({ links }: { links: string[] }) => {
         <>
             {links.map((page) => (
                 <CustomMenuEntry key={page} isCta={page === 'Social'}>
-                    <Link href={`#${page.toLowerCase()}`}>{page}</Link>
+                    <Link to={`/${page.toLowerCase().replaceAll(' ', '-')}`}>
+                        {page}
+                    </Link>
                 </CustomMenuEntry>
             ))}
         </>
