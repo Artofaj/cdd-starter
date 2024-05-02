@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 
 interface InstaFeedProps {
     profile: string;
-    label: string;
+    label?: string;
     maxWidth?: number;
 }
 
@@ -41,7 +41,7 @@ const InstaFeed = ({ profile, label, maxWidth }: InstaFeedProps) => {
                     color="secondary"
                     onClick={acceptInsta}
                 >
-                    {label}
+                    {label ? label : 'Accept Instagram Cookies'}
                 </Button>
             </Stack>
         );
