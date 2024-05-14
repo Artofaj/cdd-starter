@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Box, Stack, styled } from '@mui/material';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Seo from '../components/seo';
 
 const Wrapper = styled(Box)(({ theme }) => ({
