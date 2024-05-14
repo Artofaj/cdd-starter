@@ -1,27 +1,24 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import Linktree from '../components/Linktree';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql } from 'gatsby';
+
+export const query = graphql`
+    query LinktreePageQuery {
+        site {
+            siteMetadata {
+                description
+            }
+        }
+    }
+`;
 
 const LinktreePage = () => {
-    const { site } = useStaticQuery(
-        graphql`
-            query {
-                site {
-                    siteMetadata {
-                        title
-                        description
-                    }
-                }
-            }
-        `
-    );
-
     return (
         <Layout omitHeader>
             <Linktree
-                fallbackTitle={site.siteMetadata.title}
-                fallbackSubtitle={site.siteMetadata.description}
+                fallbackTitle={query.site.siteMetadata.title}
+                fallbackSubtitle={query.site.siteMetadata.description}
             />
         </Layout>
     );
