@@ -13,8 +13,7 @@ const OuterWrapper = styled(Box)(({ theme }) => ({
     padding: theme.spacing(2),
     gap: theme.spacing(2),
 }));
-
-const InnerWrapper = styled(Box)(({ theme }) => ({
+const LinkWrapper = styled(Box)(({ theme }) => ({
     display: 'flex',
     width: '100%',
     maxWidth: 700,
@@ -22,9 +21,16 @@ const InnerWrapper = styled(Box)(({ theme }) => ({
     gap: theme.spacing(2),
 }));
 
+const InnerWrapper = styled(LinkWrapper)(({ theme }) => ({
+    padding: theme.spacing(2),
+    minHeight: '75dvh',
+    position: 'absolute',
+}));
+
 interface LinktreeProps {
     fallbackTitle: string;
     fallbackSubtitle: string;
+    sanityLinktree: any;
 }
 
 const Linktree = ({ fallbackTitle, fallbackSubtitle }: LinktreeProps) => {
@@ -46,6 +52,7 @@ const Linktree = ({ fallbackTitle, fallbackSubtitle }: LinktreeProps) => {
 
     const title = sanityLinktree?.title || fallbackTitle || 'Title';
     const subtitle = sanityLinktree?.subtitle || fallbackSubtitle || 'Subtitle';
+    const links = sanityLinktree?.link || [];
 
     return (
         <OuterWrapper>
@@ -54,12 +61,17 @@ const Linktree = ({ fallbackTitle, fallbackSubtitle }: LinktreeProps) => {
                 <Typography variant="body1" textAlign={'center'}>
                     {subtitle}
                 </Typography>
-                <InnerWrapper>
-                    <Link to="https://www.my-website.com">Example Link</Link>
-                    <Link to="https://www.my-website.com" isFeatured>
-                        Featured Link
-                    </Link>
-                </InnerWrapper>
+                <LinkWrapper>
+                    {links.map((link) => (
+                        <Link
+                            key={link.url}
+                            to={link.url}
+                            isFeatured={link.isFeatured}
+                        >
+                            {link.title}
+                        </Link>
+                    ))}
+                </LinkWrapper>
             </InnerWrapper>
         </OuterWrapper>
     );
