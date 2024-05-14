@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import Feed from './fragments/Feed';
-import { Box, Button, Stack } from '@mui/material';
+import { Button, Stack } from '@mui/material';
 import Cookies from 'js-cookie';
+import React, { useEffect, useState } from 'react';
+import { InstagramEmbed } from 'react-social-media-embed';
 
 interface InstaFeedProps {
     profile: string;
@@ -47,7 +47,12 @@ const InstaFeed = ({ profile, label, maxWidth }: InstaFeedProps) => {
         );
     }
 
-    return <Feed profile={profile} maxWidth={maxWidth ? maxWidth : 1200} />;
+    return (
+        <InstagramEmbed
+            url={`https://www.instagram.com/${profile}/`}
+            width={'100%'}
+        />
+    );
 };
 
 export default InstaFeed;
