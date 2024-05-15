@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from './fragments/Link';
 import { Box, Typography, styled } from '@mui/material';
-import { graphql, useStaticQuery } from 'gatsby';
 
 const OuterWrapper = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -27,32 +26,19 @@ const InnerWrapper = styled(LinkWrapper)(({ theme }) => ({
     position: 'absolute',
 }));
 
-interface LinktreeProps {
-    fallbackTitle: string;
-    fallbackSubtitle: string;
+export interface LinktreeEntryProps {
+    url: URL;
+    title: string;
+    isFeatured: boolean;
 }
 
-const Linktree = ({ fallbackTitle, fallbackSubtitle }: LinktreeProps) => {
-    const { sanityLinktree } = useStaticQuery(
-        graphql`
-            query {
-                sanityLinktree {
-                    title
-                    subtitle
-                    link {
-                        url
-                        title
-                        isFeatured
-                    }
-                }
-            }
-        `
-    );
+interface LinktreeProps {
+    title: string;
+    subtitle: string;
+    links: LinktreeEntryProps[] | [];
+}
 
-    const title = sanityLinktree?.title || fallbackTitle || 'Title';
-    const subtitle = sanityLinktree?.subtitle || fallbackSubtitle || 'Subtitle';
-    const links = sanityLinktree?.link || [];
-
+const Linktree = ({ title, subtitle, links }: LinktreeProps) => {
     return (
         <OuterWrapper>
             <Typography variant="h1">{title}</Typography>
