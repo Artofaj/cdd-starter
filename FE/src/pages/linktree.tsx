@@ -7,18 +7,19 @@ export const query = graphql`
     query LinktreePageQuery {
         site {
             siteMetadata {
+                title
                 description
             }
         }
     }
 `;
 
-const LinktreePage = () => {
+const LinktreePage = ({ data }) => {
     return (
         <Layout omitHeader>
             <Linktree
-                fallbackTitle={query.site.siteMetadata.title}
-                fallbackSubtitle={query.site.siteMetadata.description}
+                fallbackTitle={data.site.siteMetadata.title}
+                fallbackSubtitle={data.site.siteMetadata.description}
             />
         </Layout>
     );

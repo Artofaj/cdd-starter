@@ -30,7 +30,6 @@ const InnerWrapper = styled(LinkWrapper)(({ theme }) => ({
 interface LinktreeProps {
     fallbackTitle: string;
     fallbackSubtitle: string;
-    sanityLinktree: any;
 }
 
 const Linktree = ({ fallbackTitle, fallbackSubtitle }: LinktreeProps) => {
