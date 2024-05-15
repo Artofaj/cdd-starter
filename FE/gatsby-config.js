@@ -14,7 +14,7 @@ dotenv.config({ path: '.env' });
 
 module.exports = {
     siteMetadata: {
-        title: `Castrum doloris Desig Starter`,
+        title: `Castrum Doloris Design Starter`,
         description: `Barebones starter with Gatsby and MUI.`,
         author: `Castrum Doloris Design`,
         siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
