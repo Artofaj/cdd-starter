@@ -1,5 +1,10 @@
 {
   "dependencies": {
     "react-icons": "^5.0.1"
+  },
+  "devDependencies": {
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.2",
+    "semantic-release": "^24.2.3"
   }
 }
