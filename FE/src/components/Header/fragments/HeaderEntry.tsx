@@ -10,6 +10,14 @@ const Link = styled(a)(({ theme }) => ({
     textAlign: 'center',
 }));
 
+export interface LinkProps {
+    title: string;
+    route: string;
+}
+interface HeaderEntryProps {
+    links: LinkProps[];
+}
+
 const CustomMenuEntry = styled(MenuItem, {
     shouldForwardProp: (prop) => !['isCta'].includes(prop as string),
 })<{ isCta: boolean }>(({ theme, isCta }) => ({
@@ -27,14 +35,15 @@ const CustomMenuEntry = styled(MenuItem, {
     },
 }));
 
-const HeaderEntry = ({ links }: { links: string[] }) => {
+const HeaderEntry = ({ links }: HeaderEntryProps) => {
     return (
         <>
             {links.map((page) => (
-                <CustomMenuEntry key={page} isCta={page === 'Social'}>
-                    <Link to={`/${page.toLowerCase().replaceAll(' ', '-')}`}>
-                        {page}
-                    </Link>
+                <CustomMenuEntry
+                    key={page.route}
+                    isCta={page.title === 'Social'}
+                >
+                    <Link to={`${page.route}`}>{page.title}</Link>
                 </CustomMenuEntry>
             ))}
         </>
