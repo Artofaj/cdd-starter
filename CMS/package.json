@@ -18,12 +18,12 @@
     "@sanity/cli": "^5.8.1",
     "@sanity/dashboard": "^5.0.1",
     "@sanity/vision": "^5.8.1",
-    "sanity-plugin-dashboard-widget-netlify": "^2.0.1",
     "react": "^19.2.2",
     "react-dom": "^19.2.2",
     "react-is": "^19.2.2",
     "sanity": "^5.8.1",
-    "styled-components": "6.3.8"
+    "sanity-plugin-dashboard-widget-netlify": "^2.0.1",
+    "styled-components": "^6.5.1"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^3.0.1",
