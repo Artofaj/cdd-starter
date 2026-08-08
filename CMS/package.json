@@ -5,17 +5,16 @@
   "main": "package.json",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "sanity dev",
-    "start": "sanity start",
-    "build": "sanity build",
-    "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy"
+    "dev": "npx sanity dev",
+    "start": "npx sanity start",
+    "build": "npx sanity build",
+    "deploy": "npx sanity deploy",
+    "deploy-graphql": "npx sanity graphql deploy"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
-    "@sanity/cli": "^5.8.1",
     "@sanity/dashboard": "^5.0.1",
     "@sanity/vision": "^5.8.1",
     "react": "^19.2.2",
