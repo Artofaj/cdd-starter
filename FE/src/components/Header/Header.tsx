@@ -3,15 +3,19 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import DesktopHeader from './fragments/DesktopHeader';
 import MobileHeader from './fragments/MobileHeader';
+import { LinkProps } from './fragments/HeaderEntry';
 
-const PAGES = ['Page1, Page2'];
+const PAGES: LinkProps[] = [
+    { title: 'index', route: '/' },
+    { title: 'linktree', route: '/linktree' },
+];
 
 interface HeaderProps {
     title: string;
 }
 
 export interface HeaderExtendedProps extends HeaderProps {
-    pages: string[];
+    pages: LinkProps[];
 }
 
 const Header = ({ title }: HeaderProps) => {
