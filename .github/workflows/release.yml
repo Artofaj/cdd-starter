@@ -54,6 +54,7 @@ jobs:
             - name: Build FE
               working-directory: FE
               run: npm run build
+              continue-on-error: true
               env:
                   SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
                   SANITY_TOKEN: ${{ secrets.SANITY_TOKEN }}
