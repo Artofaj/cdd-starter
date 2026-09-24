@@ -5,13 +5,18 @@ const Wrapper = styled('Section')(() => ({
     minHeight: '50vh',
 }));
 
-const Section = ({ children, title }) => {
+interface SectionProps {
+    children: React.ReactNode;
+    title: string;
+}
+
+function Section({ children, title }: SectionProps) {
     return (
         <Wrapper>
             <Typography variant="h2">{title}</Typography>
             {children}
         </Wrapper>
     );
-};
+}
 
 export default Section;

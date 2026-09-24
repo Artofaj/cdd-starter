@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { Box, Stack, styled } from '@mui/material';
 import Layout from '../components/Layout';
-import Seo from '../components/seo';
+import Seo from '../components/Seo';
 
 const Wrapper = styled(Box)(({ theme }) => ({
     padding: theme.spacing(10, 2),
