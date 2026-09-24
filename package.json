@@ -1,4 +1,10 @@
 {
+  "engines": {
+    "node": ">=22.22.2 || >=24.15.0"
+  },
+  "scripts": {
+    "release": "semantic-release"
+  },
   "dependencies": {
     "react-icons": "^5.5.0"
   },
